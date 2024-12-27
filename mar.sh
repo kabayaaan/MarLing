@@ -243,7 +243,7 @@ touch /var/log/nginx/access.log
 touch /var/log/nginx/error.log
 wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/GawrAme/MarLing/main/nginx.conf"
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/GawrAme/MarLing/main/vps.conf"
-wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/GawrAme/MarLing/main/xray.conf"
+wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/kabayaaan/MarLing/main/xray.conf"
 mkdir -p /var/www/html
 echo "<pre>Setup by AutoScript LingVPN</pre>" > /var/www/html/index.html
 
@@ -256,7 +256,7 @@ apt install socat cron bash-completion -y
 curl https://get.acme.sh | sh -s email=$email
 /root/.acme.sh/acme.sh --server letsencrypt --register-account -m $email --issue -d $domain --standalone -k ec-256 --debug
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /var/lib/marzban/xray.crt --keypath /var/lib/marzban/xray.key --ecc
-wget -O /var/lib/marzban/xray_config.json "https://raw.githubusercontent.com/GawrAme/MarLing/main/xray_config.json"
+wget -O /var/lib/marzban/xray_config.json "https://raw.githubusercontent.com/kabayaaan/MarLing/main/xray_config.json"
 
 #install firewall
 apt install ufw -y
